@@ -13,18 +13,29 @@ public class BlogController extends AbstractController {
 
 	@RequestMapping(value = "/")
 	public String index(Model model){
-		
+
 		// TODO - fetch users and pass to template
-		
+
+		List<User> allUsers = userDao.findAll();
+		String title = "Blog Posts!";
+		model.addAttribute("blogPosts", title);
+		model.addAttribute("allUsers", allUsers);
+
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/blog")
 	public String blogIndex(Model model) {
-		
+
 		// TODO - fetch posts and pass to template
-		
+
+
+
+		List<Post> userPosts = postDao.findAll();
+
+		model.addAttribute("userPosts", userPosts);
+
 		return "blog";
 	}
-	
+
 }

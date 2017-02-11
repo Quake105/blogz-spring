@@ -94,4 +94,6 @@ public class Post extends AbstractEntity {
 		this.modified = new Date();
 	}
 	
+
+	
 }
